@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+:root {
+    --header-height: 3rem;
+    --nav-width: 68px;
+    --first-color: #00171b;
+    --first-color-light: #8ac7ca;
+    --secondary-color: #003d47;
+    --secondary-color-light: #0c9aba;
+    --white-color: #F7F6FB;
+    --body-font: 'Nunito', sans-serif;
+    --normal-font-size: 1rem;
+    --z-fixed: 100;
+    --backgound: linear-gradient(90deg, rgb(16, 153, 245) 0%, var(--first-color) 35%, var(--secondary-color) 100%);
+}
+
+body {
+    position: relative;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    transition: .5s;
+    height: 100%;
+    /* background: var(--backgound); */
+}
+
+.obsodonto{
+    margin-top: 620px;
+	margin-left: 5px;
+	margin-left: 5px;
+    text-align: center;
+    background: #D0E5F5 ;
+    height: 150px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 2rem;
+  }
+
+ .obsodonto textarea{
+    background: #F1F2F2 ;
+    margin-top: 10px;
+ } 
+
+
+/* Sombra */
+.sombra {
+    -webkit-box-shadow: 10px 5px 15px 0px rgba(112,112,112,0.54);
+    -moz-box-shadow: 10px 5px 15px 0px rgba(112,112,112,0.54);
+    box-shadow: 10px 5px 15px 0px rgba(112,112,112,0.54);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+
+/* ComboBox */
+select::-ms-expand {
+	display: none;
+	background: #5c6664;
+}
+
+.select {
+	position: relative	;
+	appearance: none;
+	outline: 0;
+	margin: 1rem;
+	box-shadow: none;
+	
+}
+
+/* Agregar Nota */
+.boton-modal {
+	padding: 10px;
+	margin-left: 5px;
+	text-align: end;
+	margin-right: 10px;
+	
+}
+
+.boton-modal label {
+	padding: 10px 15px;
+	background-color: #31D376;
+	color: #FFF;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 300ms ease;
+}
+
+.boton-modal label:hover {
+	background-color: #3A9661;
+}
+
+
+
+#btn-modal {
+	display: none;
+}
+.container-modal {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0; left: 0;
+	background-color: rgba(144, 148, 150, 0.80);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+}
+
+#btn-modal:checked ~ .container-modal{
+	display: flex;
+}
+
+.content-modal {
+	width: 100%;
+	max-width: 400px;
+	padding: 20px;
+	background-color: #FFF;
+	border-radius: 4px;
+}
+
+.content-modal h2 {
+	margin-bottom: 15px;
+}
+
+.container-modal p {
+	padding: 15px 0px;
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
+}
+
+.content-modal .btn-cerrar {
+	width: 100%;
+	margin-top: 15px;
+	display: flex;
+	justify-content: center;
+}
+
+.content-modal .btn-cerrar label{
+	padding: 7px 10px;
+	margin-left: 2px;
+	background-color: #F51818;
+	color: #FFF;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 300ms ease;
+}
+
+.content-modal .btn-cerrar label:hover {
+	background-color: #801212;
+}
+
+.cerrar-modal {
+	width: 100px;
+	height: 100vh;
+	position: absolute;
+	top: 0; left: 0;
+	z-index: -1;
+}
+
+.pie {
+	margin-top: 200px;
+}
+
+#canva-group{
+	margin-left: 200px;
+	
+}
+#camada1Odontograma {
+    z-index: 1;
+}
+
+#camada2Odontograma {
+    z-index: 2;
+}
+
+#camada3Odontograma {
+    z-index: 3;
+}
+
+#camada4Odontograma {
+    z-index: 4;
+}
+
+#camadaPincel {
+    z-index: 3;
+}
+
+canvas {
+    position: absolute;
+    border: 1px solid #9C9898;
+    margin: 10px;
+}
+
+.checked {
+    display: none;
+}
+
+.active .checked {
+    display: inline-block;
+}
+
+.active .unchecked {
+    display: none;
+}
+
+/*inicio codigo externo*/
+nav {
+	margin: 17px auto 0;
+
+	position: relative;
+	width: 361px;
+	height: 50px;
+	background-color: #34495e;
+	border-radius: 8px;
+	font-size: 0;
+}
+nav a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 15px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+nav .animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 8px;
+}
+a:nth-child(1) {
+	width: 110px;
+}
+a:nth-child(2) {
+	width: 150px;
+}
+a:nth-child(3) {
+	width: 100px;
+}
+a:nth-child(4) {
+	width: 110px;
+}
+a:nth-child(5) {
+	width: 120px;
+}
+nav .start-home, a:nth-child(1):hover~.animation {
+	width: 110px;
+	left: 0;
+	background-color: #39b1d6;
+}
+nav .start-about, a:nth-child(2):hover~.animation {
+	width: 150px;
+	left: 110px;
+	background-color: #39b1d6;
+}
+nav .start-blog, a:nth-child(3):hover~.animation {
+	width: 100px;
+	left: 260px;
+	background-color: #39b1d6;
+}
+nav .start-portefolio, a:nth-child(4):hover~.animation {
+	width: 160px;
+	left: 310px;
+	background-color: #9b59b6;
+}
+nav .start-contact, a:nth-child(5):hover~.animation {
+	width: 120px;
+	left: 470px;
+	background-color: #e67e22;
+}
+
+body {
+	font-size: 12px;
+	font-family: sans-serif;
+	background: white;
+}
+h1 {
+	text-align: center;
+	margin: 40px 0 40px;
+	text-align: center;
+	font-size: 30px;
+	color: #ecf0f1;
+	text-shadow: 2px 2px 4px #000000;
+	font-family: 'Cherry Swash', cursive;
+}
+
+p {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: #ecf0f1;
+    font-family: 'Cherry Swash',cursive;
+    font-size: 16px;
+}
+
+span {
+    color: #2BD6B4;
+}
+
+
+
+
+
+
+.piepag-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 3px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.piepag-form > div {
+  
+  text-align: center;
+  
+  
+}
+
+.footer {
+    background-color: #a3e3df ;
+    height: 130px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+	align-items: center;
+}
+
+
+
+.small-textarea textarea { 
+   width: 100%;
+}
+
+.button_footer {
+    background-color: #5ab8cb;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+	width: 100%;
+   
+    
+    
+    cursor: pointer;
+}
+
+.button_cancelar {
+    background-color: #565e64;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+	width: 100%;
+    cursor: pointer;
+}
+
+.button_diagnostico {
+    background-color: #317f43;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+	width: 100%;
+	height: 33px;
+    cursor: pointer;
+}
+
+.nav li a:active {
+    color: #c2185b;
+}
+
+section{
+	background-color: #F1F2F2;
+}
+
+
